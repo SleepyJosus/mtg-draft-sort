@@ -45,7 +45,6 @@ Promise.all([
             cards.push(card);
         });
     })
-    console.log(cards)
 })
 
 module.exports = cards;
