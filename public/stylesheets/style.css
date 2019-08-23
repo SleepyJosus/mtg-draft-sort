@@ -10,3 +10,8 @@ a {
 .card-img {
   width: 200px;
 }
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
