@@ -7,7 +7,9 @@
   <body>
     <h1><%= title %></h1>
     <% cards.forEach(card => { %>
-    <img src="<%= card.imageUrl %>" alt="">
+      <% if(card.pickOrder && card.imageUrl) { %>
+        <img class="card-img" src="<%= card.imageUrl %>" alt="<%= card.pickOrder %>">
+      <% } %>
     <% }); %>
 
   </body>

@@ -27,8 +27,9 @@
 //   });
 require('any-promise/register/q');
 
+
 var request = require('request-promise-any');
-// var request = require('request');
+var pickOrder = require('../scrapers/pickOrder');
 
 const rootURL = 'https://api.magicthegathering.io/v1/cards'
 let cards = []
@@ -44,6 +45,14 @@ Promise.all([
         JSON.parse(result).cards.forEach(card => {
             cards.push(card);
         });
+    })
+
+    cards.forEach(card => {
+        card.pickOrder = pickOrder[card.name];
+    })
+
+    cards.sort(function(a, b) {
+        return a.pickOrder - b.pickOrder;
     })
 })
 
