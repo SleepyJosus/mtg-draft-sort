@@ -1,0 +1,98 @@
+<%
+function setColorFilter(filter, color) {
+    if(!filter.color && !filter.rarity) {
+        return `?color=${color}`;
+    } else if (filter.color && !filter.rarity) {
+        if(filter.color === color) {
+            return '';
+        } else if (filter.color.includes(color)) {
+            return `?color=${filter.color.replace(color, '')}`;
+        } else {
+            return`?color=${color}${filter.color}`;
+        }
+    } else if(filter.color && filter.rarity) {
+        if(filter.color === color) {
+            return `?rarity=${filter.rarity}`;
+        } else if (filter.color.includes(color)) {
+            return `?color=${filter.color.replace(color, '')}&rarity=${filter.rarity}`;
+        } else {
+            return `?color=${color}${filter.color}&rarity=${filter.rarity}`;
+        }
+    } else if(!filter.color && filter.rarity) {
+        return `?color=${color}&rarity=${filter.rarity}`;
+    }
+}
+
+function setRarityFilter(filter, rarity) {
+    if(!filter.rarity && !filter.color) {
+        return `?rarity=${rarity}`;
+    } else if(filter.rarity && !filter.color) {
+        if(filter.rarity === rarity) {
+            return '';
+        } else if (filter.rarity.includes(rarity)) {
+            return `?rarity=${filter.rarity.replace(rarity, '')}`;
+        } else {
+            return`?rarity=${rarity}${filter.rarity}`;
+        }
+    } else if(filter.rarity && filter.color) {
+        if(filter.rarity === rarity) {
+            return `?color=${filter.color}`;
+        } else if (filter.rarity.includes(rarity)) {
+            return `?color=${filter.color}&rarity=${filter.rarity.replace(rarity, '')}`;
+        } else {
+            return `?color=${filter.color}&rarity=${rarity}${filter.rarity}`;
+        }
+    } else if(!filter.rarity && filter.color) {
+        return `?color=${filter.color}&rarity=${rarity}`;
+    }
+}
+%>
+
+<section id="filter">
+    <div class="center filter-top">
+        <div class="filter-item">
+            <a href="/filter<%= setColorFilter(filter, 'White') %>">
+                <img class="icon" src="https://i.imgur.com/3f0zmrv.png" alt="">
+            </a>
+        </div>
+        <div class="filter-item">
+            <a href="/filter<%= setColorFilter(filter, 'Blue') %>">
+                <img class="icon" src="https://i.imgur.com/Cuo8vh4.png" alt="">
+            </a>
+        </div>
+        <div class="filter-item">
+            <a href="/filter<%= setColorFilter(filter, 'Black') %>">
+                <img class="icon" src="https://i.imgur.com/1kCZTHy.png" alt="">
+            </a>
+        </div>
+        <div class="filter-item">
+            <a href="/filter<%= setColorFilter(filter, 'Red') %>">
+                <img class="icon" src="https://i.imgur.com/ioTehMj.png" alt="">
+            </a>
+        </div>
+        <div class="filter-item">
+            <a href="/filter<%= setColorFilter(filter, 'Green') %>">
+                <img class="icon" src="https://i.imgur.com/PMBUYLO.png" alt="">
+            </a>
+        </div>
+        <div class="filter-item">
+            <a href="/filter<%= setColorFilter(filter, 'Colorless') %>">
+                <img class="icon" src="https://i.imgur.com/1U3ZyBD.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="center filter-bottom">
+        <div class="filter-item">
+            <a class="filter-button" href="/filter<%= setRarityFilter(filter, 'Common') %>">Common</a>
+        </div>
+        <div class="filter-item">
+            <a class="filter-button" href="/filter<%= setRarityFilter(filter, 'Uncommon') %>">Uncommon</a>
+        </div>
+        <div class="filter-item">
+            <a class="filter-button" href="filter<%= setRarityFilter(filter, 'Rare') %>">Rare</a>
+        </div>
+        <div class="filter-item">
+            <a class="filter-button" href="filter<%= setRarityFilter(filter, 'Mythic') %>">Mythic</a>
+        </div>
+    </div>
+</section>

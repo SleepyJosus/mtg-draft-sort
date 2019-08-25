@@ -305,10 +305,11 @@ const pickOrder = {
 //         let tempArr = pick.split('. ');
 //         pickOrder[tempArr[1]] = tempArr[0];
 //     })
-//     console.log(pickOrder)
+//     return pickOrder;
 // })
 // .catch(function(err) {
-    
+//     console.error(err)
+//     return err
 // });
 
 

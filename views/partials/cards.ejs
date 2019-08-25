@@ -1,0 +1,33 @@
+<% 
+function isFiltered(filter, card) {
+  let filtered = false;
+
+  if(filter.color) {
+    if(filter.color.includes('Colorless') && card.colors.length === 0) {
+      filtered = true;
+    }
+  
+    card.colors.forEach(color => {
+      if(filter.color.includes(color)) {
+        filtered = true;
+      }
+    })
+  }
+  if(filter.rarity) {
+    if(filter.rarity.includes(card.rarity)) {
+      filtered = true;
+    }
+  }
+
+  return filtered;
+}
+%>
+<section id="card-display">
+  <% cards.forEach(card => { %>
+    <% if(card.pickOrder && card.imageUrl) { %>
+      <% if(!isFiltered(filter, card)) { %>
+          <img class="card-img" src="<%= card.imageUrl %>" alt="<%= card.pickOrder %>">     
+      <% }; %>
+    <% } %>
+  <% }); %>
+</section>

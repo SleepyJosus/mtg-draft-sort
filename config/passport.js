@@ -9,8 +9,8 @@ passport.use(new GoogleStrategy({
     },
     function(accessToken, refreshToken, profile, cb) {
         User.findOne({'googleId': profile.id}, function(err, user) {
-            if(student) {
-                return cb(err, student);
+            if(user) {
+                return cb(err, user);
             } else {
                 var newUser = new User({
                     name: profile.displayName,
