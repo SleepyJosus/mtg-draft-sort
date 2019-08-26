@@ -23,6 +23,10 @@ const cardSchema = new mongoose.Schema({
     pickOrder: {
         type: Number,
         default: null
+    },
+    tier: {
+        type: Number,
+        default: null
     }
 });
 

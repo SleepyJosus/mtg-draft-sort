@@ -9,6 +9,10 @@ var Card = require('../models/card');
 
 const rootURL = 'https://api.magicthegathering.io/v1/cards'
 
+// Card.deleteMany({}, function(err) {
+//     if(err) throw (err);
+// })
+
 Promise.all([
     request(rootURL + '/?set=M20;page=1'),
     request(rootURL + '/?set=M20;page=2'),

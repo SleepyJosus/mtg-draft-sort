@@ -57,17 +57,25 @@ nav {
 .filter-button {
   margin: 0;
   padding: 0 5px;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,.4);
+  color: rgba(255,255,255,.4);
   border-radius: 5px;
 }
 
 .filter-button:hover {
-  color: rgb(204, 204, 204);
-  border-color: rgb(204, 204, 204);
+  color: rgba(255,255,255,.8);
+  border-color: rgba(255,255,255,.8);
 }
 
 .icon {
-  width: 33px
+  width: 33px;
+  filter: brightness(40%);
+}
+
+.clicked {
+  color: white;
+  border-color: white;
+  filter: brightness(100%);
 }
 
 .icon:hover {
