@@ -18,17 +18,3 @@ function index(req, res) {
         }
     )        
 }
-
-// function filter(req, res) {
-//     console.log(req.query);
-//     Card.find({}).sort('pickOrder').exec(
-//         function(err, cards) {
-//             res.render('filter/index', {
-//                 title: 'M20',
-//                 user: req.user,
-//                 cards,
-//                 filter: req.params.filter
-//             });
-//         }
-//     )   
-// }

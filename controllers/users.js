@@ -1,17 +1,16 @@
-const Card = require('../models/card');
+const User = require('../models/user');
+const PickOrder = require('../models/pickOrder');
 
 module.exports = {
     index
 }
 
 function index(req, res) {
-    Card.find({}).sort('pickOrder').exec(
-        function(err, cards) {
-            res.render('users/index', {
-                title: 'M20',
-                user: req.user,
-                cards
-            });
-        })        
-    
+    PickOrder.find({userId: req.user._id}).exec(function(err, pickOrders) {
+        res.render('users/index', {
+            title: req.user.name,
+            user: req.user,
+            pickOrders
+        })
+    });
 }

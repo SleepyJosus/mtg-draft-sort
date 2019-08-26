@@ -10,6 +10,12 @@ body {
   background-repeat: no-repeat;
 }
 
+h1 {
+  font-size: 28px;
+  margin: 0 0 1vw 0;
+  text-decoration: underline;
+}
+
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -57,25 +63,22 @@ nav {
 .filter-button {
   margin: 0;
   padding: 0 5px;
-  border: 1px solid rgba(255,255,255,.4);
-  color: rgba(255,255,255,.4);
+  border: 1px solid rgba(255,255,255,1);
+  color: rgba(255,255,255,1);
   border-radius: 5px;
 }
 
 .filter-button:hover {
-  color: rgba(255,255,255,.8);
-  border-color: rgba(255,255,255,.8);
+  filter: brightness(80%);
 }
 
 .icon {
   width: 33px;
-  filter: brightness(40%);
+  filter: brightness(100%);
 }
 
 .clicked {
-  color: white;
-  border-color: white;
-  filter: brightness(100%);
+  filter: brightness(40%);
 }
 
 .icon:hover {
@@ -108,4 +111,35 @@ nav {
 
 .right {
   margin-left: auto;
+}
+#pick-orders {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  height: 45vw;
+  width: 80vw;
+  margin: 1vw 1vw 0 1vw;
+  padding: 1vw;
+}
+#user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1vw 1vw 0 0 ;
+  background-color: white;
+  max-height: 40vh;
+  border-radius: 5px;
+}
+
+#user-info p {
+  margin: 10px 10px 0 10px;
+}
+
+.img-circle {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
 }
