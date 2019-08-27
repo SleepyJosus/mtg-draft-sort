@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<section id="show-body">
+<h1><%= pickOrder.name %></h1>
+<div id="picks">
+    <% pickOrder.picks.forEach(pick => { %>
+        <% if(pick.pickOrder) { %>
+            <div class="row">
+                <div class="cell">
+                    <%= pick.name %>
+                </div>
+                <div class="cell">
+                    Pick Order: <%= pick.pickOrder %>
+                </div>
+                <div class="cell">
+                    Tier: <%= pick.tier %>
+                </div>
+            </div>
+        <% } %>
+    <% }); %>
+</div>
+</section>
+<%- include('../partials/footer') %>

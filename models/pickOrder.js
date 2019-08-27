@@ -12,6 +12,10 @@ const pickSchema = new Schema({
 
 const pickOrderSchema = new Schema({
 
+    name: {
+        type: String,
+        default: 'untitled'
+    },
     userId: String,
     picks: [pickSchema]
     

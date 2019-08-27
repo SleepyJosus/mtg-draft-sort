@@ -1,20 +1,28 @@
 <%- include('../partials/header') %>
-<section class="content-body">
+<section id="users-body">
     <div id="pick-orders">
         <h1>Pick Orders</h1>
-        <div class="row">
+        <div class="row head">
             <div>Name</div>
         </div>
-        <div class="row">
-            <% if(pickOrders) { %>
-                <% pickOrders.forEach(pickOrder => { %>
-                    <div><%= pickOrder.name %></div>
+        <% if(pickOrders) { %>
+            <% pickOrders.forEach(pickOrder => { %>
+                <div class="row">
+                    <div class="cell">
+                        <a class="black-link" href="/pickOrders/<%= pickOrder._id %>"><%= pickOrder.name %></a>
+                    </div>
+                    <div class="cell">
+                        <form action="/pickOrders/<%= pickOrder._id %>/?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </div>
+                </div>
                 <% }); %> 
             <% } %>     
-        </div>
         <div>
-            <form action="/pickOrders" method="POST">
-                <input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+            <form action="/pickOrders" method="POST" enctype="multipart/form-data">
+                <input type="file" accept=".json" name="pickOrder" required> 
+                <input type="text" name="name" value="untitled" required>
                 <label for="fileupload"> Select a file to upload</label> 
                 <input type="submit" value="submit">
             </form>
@@ -24,6 +32,9 @@
         <img class="img-circle" src="<%= user.avatar %>" alt="">
         <p><%= user.name %></p>
         <p><%= user.email %></p>
+        <p>
+            <a class="black-link" href="/logout">Logout</a>
+        </p>
     </div>
 </section>
 <%- include('../partials/footer') %>
