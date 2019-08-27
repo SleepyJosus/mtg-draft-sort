@@ -2,21 +2,27 @@
 <section id="show-body">
 <h1><%= pickOrder.name %></h1>
 <div id="picks">
-    <% pickOrder.picks.forEach(pick => { %>
-        <% if(pick.pickOrder) { %>
-            <div class="row">
-                <div class="cell">
-                    <%= pick.name %>
+    <form action="/pickorders/<%= pickOrder._id %>?_method=PUT" method="POST">
+        <input type="submit" value="Save Changes">
+        <% pickOrder.picks.forEach(pick => { %>
+            <% if(pick.pickOrder) { %>
+                <div class="row <%= pick.pickOrder % 2 === 0 ? '' : 'gray' %>">
+                    <div class="cell">
+                        <input type="hidden" name="name" value="<%= pick.name %>">
+                        <%= pick.name %>
+                    </div>
+                    <div class="cell-middle">
+                        <span>Pick Order:</span>
+                        <input type="text" name="pickOrder" value="<%= pick.pickOrder %>" >
+                    </div>
+                    <div class="cell-end">
+                        <span>Tier:</span>
+                        <input type="text" name="tier" value="<%= pick.tier %>">
+                    </div>
                 </div>
-                <div class="cell">
-                    Pick Order: <%= pick.pickOrder %>
-                </div>
-                <div class="cell">
-                    Tier: <%= pick.tier %>
-                </div>
-            </div>
-        <% } %>
-    <% }); %>
+            <% } %>
+        <% }); %>
+    </form>
 </div>
 </section>
 <%- include('../partials/footer') %>

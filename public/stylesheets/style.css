@@ -1,5 +1,6 @@
 * {
   font-size: 14px;
+  font-weight: 100;
 }
 body {
   padding: 0px;
@@ -13,7 +14,14 @@ body {
 h1 {
   font-size: 28px;
   margin: 0 0 1vw 0;
-  text-decoration: underline;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0 0 .5vh 0;
+  width: 12vw;
+  padding: 0 1vw;
+  text-align: center;
 }
 
 a {
@@ -144,8 +152,18 @@ nav {
   flex-direction: column;
   background-color: white;
   border-radius: 5px;
-  width: 50vw;
   padding: 1vw;
+}
+
+#picks form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#picks form input[type="submit"] {
+  width: 100px;
+  margin-bottom: 2vh; 
 }
 
 .black-link {
@@ -179,20 +197,117 @@ nav {
 
 .row {
   display: flex; 
-  /* width: 35vw;  */
-  padding: 0 10px;
+  align-items: center;
+  padding: 3px 10px;
+}
+
+.row input[type="text"] {
+  width: 30px;
+  padding: 0;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 1px 0 1px 3px;
+  height: 15px;
+  border: 1px solid lightgrey;
 }
 
 .row .cell {
   margin: 0;
-  width: 15vw;
+  width: 250px;
+}
+
+.row .cell-middle {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 150px;
+}
+
+.row .cell-end {
+  display: flex;
+  align-items: center;  
+  margin: 0;
 }
 
 .head {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.gray {
+  background-color: rgba(0,0,0,.05);
+  border-radius: 5px;
+}
+
+#add-file-form {
+  margin-top: 10vh;
+}
+
+#add-file-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 12vw;
+  padding: 0 1vw 1vw 1vw;
+  border-radius: 5px;
+}
+
+#add-file-form input[type="submit"] {
+  margin-top: 30px;
+}
+
+.input-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: rgba(0,0,0,.2);
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 5px;
+  width: 60px;
+  padding: 1px;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  color: black;
+  border: 1px solid rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  min-width: 150px;
+  padding: 1px;
+}
+
+.inputfile + label:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }

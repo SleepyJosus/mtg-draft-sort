@@ -8,6 +8,7 @@ var pickOrdersCtrl = require('../controllers/pickOrders');
 router.get('/:id', isLoggedIn, pickOrdersCtrl.show);
 router.post('/', isLoggedIn, upload.single('pickOrder'), pickOrdersCtrl.create);
 router.delete('/:id', isLoggedIn, pickOrdersCtrl.delete);
+router.put('/:id', isLoggedIn, pickOrdersCtrl.update);
 
 module.exports = router;
 
