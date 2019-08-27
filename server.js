@@ -9,7 +9,7 @@ var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var filterRouter = require('./routes/filter');
+var filtersRouter = require('./routes/filters');
 var pickOrdersRouter = require('./routes/pickOrders');
 
 require('dotenv').config();
@@ -39,7 +39,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/filter', filterRouter);
+app.use('/filters', filtersRouter);
 app.use('/pickOrders', pickOrdersRouter);
 
 // catch 404 and forward to error handler

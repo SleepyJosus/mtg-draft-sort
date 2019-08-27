@@ -51,48 +51,48 @@ function setRarityFilter(filter, rarity) {
 <section id="filter">
     <div class="center filter-top">
         <div class="filter-item">
-            <a href="/filter<%= setColorFilter(filter, 'White') %>">
+            <a href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setColorFilter(filter, 'White') %>">
                 <img class="icon <%= filter.color && filter.color.includes('White') ? 'clicked' : '' %>" src="https://i.imgur.com/3f0zmrv.png" alt="">
             </a>
         </div>
         <div class="filter-item">
-            <a href="/filter<%= setColorFilter(filter, 'Blue') %>">
+            <a href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setColorFilter(filter, 'Blue') %>">
                 <img class="icon <%= filter.color && filter.color.includes('Blue') ? 'clicked' : '' %>" src="https://i.imgur.com/Cuo8vh4.png" alt="">
             </a>
         </div>
         <div class="filter-item">
-            <a href="/filter<%= setColorFilter(filter, 'Black') %>">
+            <a href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setColorFilter(filter, 'Black') %>">
                 <img class="icon <%= filter.color && filter.color.includes('Black') ? 'clicked' : '' %>" src="https://i.imgur.com/1kCZTHy.png" alt="">
             </a>
         </div>
         <div class="filter-item">
-            <a href="/filter<%= setColorFilter(filter, 'Red') %>">
+            <a href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setColorFilter(filter, 'Red') %>">
                 <img class="icon <%= filter.color && filter.color.includes('Red') ? 'clicked' : '' %>" src="https://i.imgur.com/ioTehMj.png" alt="">
             </a>
         </div>
         <div class="filter-item">
-            <a href="/filter<%= setColorFilter(filter, 'Green') %>">
+            <a href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setColorFilter(filter, 'Green') %>">
                 <img class="icon <%= filter.color && filter.color.includes('Green') ? 'clicked' : '' %>" src="https://i.imgur.com/PMBUYLO.png" alt="">
             </a>
         </div>
         <div class="filter-item">
-            <a href="/filter<%= setColorFilter(filter, 'Colorless') %>">
+            <a href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setColorFilter(filter, 'Colorless') %>">
                 <img class="icon <%= filter.color && filter.color.includes('Colorless') ? 'clicked' : '' %>" src="https://i.imgur.com/1U3ZyBD.png" alt="">
             </a>
         </div>
     </div>
     <div class="center filter-bottom">
         <div class="filter-item">
-            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Common') ? 'clicked' : '' %>" href="/filter<%= setRarityFilter(filter, 'Common') %>">Common</a>
+            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Common') ? 'clicked' : '' %>" href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setRarityFilter(filter, 'Common') %>">Common</a>
         </div>
         <div class="filter-item">
-            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Uncommon') ? 'clicked' : '' %>" href="/filter<%= setRarityFilter(filter, 'Uncommon') %>">Uncommon</a>
+            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Uncommon') ? 'clicked' : '' %>" href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setRarityFilter(filter, 'Uncommon') %>">Uncommon</a>
         </div>
         <div class="filter-item">
-            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Rare') ? 'clicked' : '' %>" href="filter<%= setRarityFilter(filter, 'Rare') %>">Rare</a>
+            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Rare') ? 'clicked' : '' %>" href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setRarityFilter(filter, 'Rare') %>">Rare</a>
         </div>
         <div class="filter-item">
-            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Mythic') ? 'clicked' : '' %>" href="filter<%= setRarityFilter(filter, 'Mythic') %>">Mythic</a>
+            <a class="filter-button <%= filter.rarity && filter.rarity.includes('Mythic') ? 'clicked' : '' %>" href="/filters<%= pickOrder ? `/${pickOrder}` : '' %><%= setRarityFilter(filter, 'Mythic') %>">Mythic</a>
         </div>
     </div>
 </section>
