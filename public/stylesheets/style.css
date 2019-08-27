@@ -27,7 +27,6 @@ h2 {
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  /* margin: 10px; */
 }
 
 a:hover {
@@ -155,15 +154,29 @@ nav {
   padding: 1vw;
 }
 
-#picks form {
+#picks .form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#picks form input[type="submit"] {
+#picks .form input[type="submit"] {
   width: 100px;
   margin-bottom: 2vh; 
+}
+
+#pick-order-name-input {
+  font-size: 24px;
+  margin: 10px;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 5px;
+  padding: 0 5px;
+  font-weight: 100;
+}
+
+.big {
+  font-size: 24px;
+  font-weight: 100;
 }
 
 .black-link {
@@ -311,3 +324,4 @@ input[type="submit"]:hover {
   display: flex;
   flex-direction: row;
 }
+

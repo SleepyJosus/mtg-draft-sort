@@ -6,7 +6,8 @@ var upload = multer({ dest: 'uploads/' })
 var pickOrdersCtrl = require('../controllers/pickOrders');
 
 router.get('/:id', isLoggedIn, pickOrdersCtrl.show);
-router.post('/', isLoggedIn, upload.single('pickOrder'), pickOrdersCtrl.create);
+router.post('/new', isLoggedIn, pickOrdersCtrl.create);
+router.post('/', isLoggedIn, upload.single('pickOrder'), pickOrdersCtrl.import);
 router.delete('/:id', isLoggedIn, pickOrdersCtrl.delete);
 router.put('/:id', isLoggedIn, pickOrdersCtrl.update);
 
