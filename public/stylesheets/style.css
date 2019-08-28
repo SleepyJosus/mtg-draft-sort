@@ -27,10 +27,15 @@ h2 {
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+  cursor: default;
 }
 
 a:hover {
   color: rgb(204, 204, 204)
+}
+
+span {
+  cursor: default;
 }
 
 nav {
@@ -264,7 +269,7 @@ input[type="text"] {
 }
 
 .gray {
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0,0,0,.03);
   border-radius: 5px;
 }
 
@@ -305,6 +310,7 @@ input[type="submit"], input[type="reset"], .button {
   padding: 0px 1px 1px 1px;
   height: 22px;
   margin: 0 2px;
+  cursor: default;
 }
 
 input[type="submit"]:hover, input[type="reset"]:hover, .button:hover {
@@ -452,4 +458,22 @@ input[type="submit"]:hover, input[type="reset"]:hover, .button:hover {
   border-radius: 10px;
   text-align: center;
   font-size: 26px;
+}
+
+.hidden-img {
+  display: none;
+}
+
+.show-img {
+  display: block;
+  position: fixed;
+  top: 10vh;
+  left: 1.8vw;
+  width: 28vw;
+  filter: drop-shadow(.3vw .3vw .3vw rgba(17, 25, 58, 0.8));
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, .5);
+  border-radius: 5px;
 }

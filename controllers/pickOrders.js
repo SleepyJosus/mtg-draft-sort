@@ -49,10 +49,18 @@ function show(req, res) {
         pickOrder.picks.sort(function(a, b) {
             return a.pickOrder - b.pickOrder;
         });
-        res.render('pickOrders/show', {
-            title: pickOrder.name,
-            pickOrder,
-            user: req.user
+        pickOrder.set = "M20";
+        Card.find({set: pickOrder.set}, function(err, cards) {
+            let imageUrls = {}
+            cards.forEach(card => {
+                imageUrls[card.name] = card.imageUrl
+            })
+            res.render('pickOrders/show', {
+                title: pickOrder.name,
+                pickOrder,
+                imageUrls,
+                user: req.user
+            })
         })
     })
 }
