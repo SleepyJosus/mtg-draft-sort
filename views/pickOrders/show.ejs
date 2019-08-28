@@ -5,11 +5,15 @@
         <span class="big">
             Pick Order:
         </span>
-        <input id="pick-order-name-input" type="text" name="pickOrderName" value="<%= pickOrder.name %>">
+        <input id="pick-order-name-input" type="text" name="pickOrderName" value="<%= pickOrder.name %>" required>
     </div>
     <div id="picks">
         <div class="form">
-            <input type="submit" value="Save Changes">
+            <div class="flex-row">
+                <a class="button" href="/users">Back</a>
+                <input type="reset" value="Reset">
+                <input type="submit" value="Save Changes">
+            </div>
             <% pickOrder.picks.forEach(pick => { %>
                 <% if(pick.pickOrder) { %>
                     <div class="row <%= pick.pickOrder % 2 === 0 ? '' : 'gray' %>">
@@ -19,11 +23,11 @@
                         </div>
                         <div class="cell-middle">
                             <span>Pick Order:</span>
-                            <input type="text" name="pickOrder" value="<%= pick.pickOrder %>" >
+                            <input type="number" name="pickOrder" value="<%= pick.pickOrder %>" min="0" max="500" required>
                         </div>
                         <div class="cell-end">
                             <span>Tier:</span>
-                            <input type="text" name="tier" value="<%= pick.tier %>">
+                            <input type="number" name="tier" value="<%= pick.tier %>" min="1" max="8" required>
                         </div>
                     </div>
                 <% } %>

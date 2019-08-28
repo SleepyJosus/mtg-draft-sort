@@ -7,7 +7,7 @@ body {
   margin: 0px;
   font-family: 'Quicksand', sans-serif;
   background-color: rgb(204, 204, 204);
-  background: linear-gradient(rgb(224, 224, 224), rgb(123, 123, 134));
+  background: linear-gradient(rgb(240, 240, 240), rgb(207, 207, 207));
   background-repeat: no-repeat;
 }
 
@@ -94,8 +94,8 @@ nav {
 
 #card-display {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-img {
@@ -161,7 +161,7 @@ nav {
 }
 
 #picks .form input[type="submit"] {
-  width: 100px;
+  width: 117px;
   margin-bottom: 2vh; 
 }
 
@@ -172,6 +172,9 @@ nav {
   border-radius: 5px;
   padding: 0 5px;
   font-weight: 100;
+  height: 28px;
+  width: 250px;
+  text-align: left;
 }
 
 .big {
@@ -214,8 +217,16 @@ nav {
   padding: 3px 10px;
 }
 
-.row input[type="text"] {
-  width: 30px;
+input[type="text"] {
+  border: 1px solid rgba(0,0,0,.4);
+  border-radius: 5px;
+  width: 150px;
+  height: 18px;
+  text-align: center;
+}
+
+.row input[type="text"], .row input[type="number"] {
+  width: 40px;
   padding: 0;
   margin-left: 5px;
   border-radius: 5px;
@@ -284,16 +295,27 @@ nav {
   border-radius: 5px;
 }
 
-input[type="submit"] {
+
+input[type="submit"], input[type="reset"], .button {
+  color: black;
   background-color: rgba(0,0,0,.2);
   border: 1px solid rgba(0,0,0,.3);
   border-radius: 5px;
   width: 60px;
-  padding: 1px;
+  padding: 0px 1px 1px 1px;
+  height: 22px;
+  margin: 0 2px;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="reset"]:hover, .button:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  height: 19px;
 }
 
 .inputfile {
@@ -325,3 +347,109 @@ input[type="submit"]:hover {
   flex-direction: row;
 }
 
+.tier0 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 166, 0, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 0, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(0, 128, 0, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(0, 0, 255, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier6 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(76, 0, 130, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier7 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(238, 130, 238, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+.tier8 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 192, 203, 0.1);
+  min-height: 5vh;
+  width: 98%;
+  border-radius: 10px;
+  padding: 1vh 0;
+}
+
+.tier-h1 {
+  margin: 1vh 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 98%;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 26px;
+}

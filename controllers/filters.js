@@ -15,7 +15,8 @@ function index(req, res) {
                 user: req.user,
                 cards,
                 filter: req.query,
-                pickOrder: null
+                pickOrder: null,
+                tier: false,
             });
         }
     )        
@@ -41,7 +42,8 @@ function applyPickOrder(req, res) {
                 user: req.user,
                 cards,
                 filter: req.query,
-                pickOrder: req.params.id
+                pickOrder: req.params.id,
+                tier: true,
             });
         })
     });        

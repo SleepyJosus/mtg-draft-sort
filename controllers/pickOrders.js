@@ -28,7 +28,7 @@ function create(req, res) {
         let picks = [];
         let count = 1
         cards.forEach((card, idx) => {
-            if(card.pickOrder && card.imageUrl) {
+            if(card.imageUrl) {
                 let temp = {
                     name: card.name,
                     pickOrder: count,

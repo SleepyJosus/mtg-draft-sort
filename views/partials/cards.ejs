@@ -23,11 +23,28 @@ function isFiltered(filter, card) {
 }
 %>
 <section id="card-display">
-  <% cards.forEach(card => { %>
-    <% if(card.pickOrder && card.imageUrl) { %>
-      <% if(!isFiltered(filter, card)) { %>
-          <img class="card-img" src="<%= card.imageUrl %>" alt="<%= card.pickOrder %>">     
-      <% }; %>
+  <% if(tier) { %>
+    <% for(let i = 1; i <= 8; i++) { %>
+      <h1 class="tier-h1"><%= `Tier ${i}` %></h1>
+      <div class="tier<%= i %>">
+        <% cards.forEach(card => { %>
+          <% if(card.pickOrder && card.imageUrl) { %>
+            <% if(!isFiltered(filter, card) && card.tier === i) { %>
+                <img class="card-img" src="<%= card.imageUrl %>" alt="<%= card.pickOrder %>">     
+            <% }; %>
+          <% } %>
+        <% }); %>
+      </div>
     <% } %>
-  <% }); %>
+  <% } else { %>
+    <div class="tier0">
+      <% cards.forEach(card => { %>
+        <% if(card.pickOrder && card.imageUrl) { %>
+          <% if(!isFiltered(filter, card)) { %>
+              <img class="card-img" src="<%= card.imageUrl %>" alt="<%= card.pickOrder %>">     
+          <% }; %>
+        <% } %>
+      <% }); %>
+    <% } %>
+    </div>
 </section>
