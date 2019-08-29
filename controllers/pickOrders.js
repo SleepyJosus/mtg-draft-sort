@@ -47,7 +47,12 @@ function create(req, res) {
 function show(req, res) {
     PickOrder.findById(req.params.id, function(err, pickOrder) {
         pickOrder.picks.sort(function(a, b) {
-            return a.pickOrder - b.pickOrder;
+            if(a.pickOrder > b.pickOrder) {
+                return 1;
+            } else if (a.pickOrder < b.pickOrder) {
+                return -1;
+            }
+            return 0;
         });
         pickOrder.set = "M20";
         Card.find({set: pickOrder.set}, function(err, cards) {
