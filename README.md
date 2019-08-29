@@ -18,7 +18,7 @@ this is an app for displaying mtg limited draft pick-orders in a filterable form
 
 ### Technologies Used
 
-JavaScript, Node.js, Express, HTML, CSS
+JavaScript, MongoDB, Express, Node.js, HTML, CSS
 
 ### Getting Started
 
