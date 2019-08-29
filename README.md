@@ -14,6 +14,10 @@ JavaScript, Node.js, Express, HTML, CSS
 
 https://mtg-draft-filter.herokuapp.com
 
+### Trello
+
+https://trello.com/b/jSGc3yzq/mtg-draft-sort
+
 ### Next Steps
 
 1. Make pickOrder.json files downloadable
