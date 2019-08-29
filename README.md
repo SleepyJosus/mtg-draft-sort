@@ -21,3 +21,4 @@ JavaScript, Node.js, Express, HTML, CSS
 3. Make a list of popular pick orders available to the user
 4. Add more card sets
 5. Add instruction sections where neccessary
+6. Continue styling users page
