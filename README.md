@@ -2,6 +2,16 @@
 
 this is an app for displaying mtg limited draft pick-orders in a filterable format
 
+### Wireframe
+
+![alt text](https://i.imgur.com/UXWFHoh.png)
+
+### User Stories
+
+1. AAU, I want to be able to see a sorted set of images of all the cards in a set
+2. AAU, I want to be able to filter out cards by color and rarity
+3. AAU, I want to be able to make my own pick orders sorted into different quality tiers.
+
 ### Screenshot
 
 ![alt text](https://i.imgur.com/gJSKy6Y.jpg)
