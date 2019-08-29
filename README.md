@@ -12,7 +12,7 @@ JavaScript, Node.js, Express, HTML, CSS
 
 ### Getting Started
 
-[link to app]: https://mtg-draft-filter.herokuapp.com
+https://mtg-draft-filter.herokuapp.com
 
 ### Next Steps
 
